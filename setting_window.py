@@ -145,7 +145,7 @@ class settingWindow(QWidget):
         layout.addWidget(self.headlabel2, 0, 1, )
 
         self.headlabel3 = QLabel(self)
-        self.headlabel3.setText('提醒间隔')
+        self.headlabel3.setText('提醒间隔(秒)')
         self.headlabel3.setAlignment(Qt.AlignCenter)
         self.headlabel3.setStyleSheet("background:rgb(224,224,224);"
                                       "font:bold 15px;"
