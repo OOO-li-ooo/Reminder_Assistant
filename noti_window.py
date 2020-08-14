@@ -30,7 +30,7 @@ class WindowNotify(QtWidgets.QMainWindow):
         self.move((self.desktop.availableGeometry().width() - self.width()), pyautogui.size()[1])
         self.label = QtWidgets.QLabel(self)
         # self.setWindowFlags(Qt.FramelessWindowHint)  # 去边框
-        # self.setAttribute(Qt.WA_TranslucentBackground)  # 设置窗口背景透明
+        self.setAttribute(Qt.WA_TranslucentBackground)  # 设置窗口背景透明
         self.label.setGeometry(QtCore.QRect(0, 0, self.width(), self.height()))
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setStyleSheet("background:rgb(241,241,241);"
@@ -196,13 +196,12 @@ class WindowNotify(QtWidgets.QMainWindow):
 
     def _init(self):
         # 隐藏任务栏|去掉边框|顶层显示
-        self.setWindowFlags(Qt.Tool | Qt.X11BypassWindowManagerHint | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        self.setWindowFlags(Qt.Tool | Qt.X11BypassWindowManagerHint | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint )
 
-        self.setStyleSheet(
-                    "    background-color:rgb(255,255,255);\n"
-                    "    box-shadow: -10px 2px 4px rgba(0,255,0,0.5);"
-                          "border-radius: 12px;"
-                    )
+        # self.setStyleSheet(
+        #             "    background-color:rgba(255,255,255,0);\n"
+        #                   "border-radius: 15px;"
+        #             )
 
 def shownoti():
     app2 = QApplication(sys.argv)
